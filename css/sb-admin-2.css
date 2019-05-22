@@ -6117,6 +6117,16 @@ a.close.disabled {
   pointer-events: none;
 }
 
+.logo-pucpr{
+  max-height: 110px;
+  max-width: 50px; 
+  padding-top: 30px;
+}
+
+.title-sidebar{
+  padding-top: 12px;
+}
+
 .modal.fade .modal-dialog {
   -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
@@ -12058,3 +12068,4 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
