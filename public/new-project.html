@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - 404</title>
+  <title>iSeek - Novo Projeto</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -54,7 +54,7 @@
       </div>
 
       <!-- Nav Item - Novo projeto -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="new-project.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Novo projeto</span></a>
@@ -102,7 +102,7 @@
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Procure por..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
                 <button class="btn btn-primary" type="button">
                   <i class="fas fa-search fa-sm"></i>
@@ -123,7 +123,7 @@
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Procure por..." aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="button">
                         <i class="fas fa-search fa-sm"></i>
@@ -268,12 +268,86 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- 404 Error Text -->
-          <div class="text-center">
-            <div class="error mx-auto" data-text="404">404</div>
-            <p class="lead text-gray-800 mb-5">Page Not Found</p>
-            <p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
-            <a href="index.html">&larr; Back to Projetos</a>
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Novo Projeto</h1>
+          </div>
+
+          <div class="text-lg">
+
+            <p>*Tipo de projeto</p>
+            <div class="dropdown mb-4">
+              <button class="btn bg-gray-500 text-gray-100 dropdown-toggle container-fluid" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tipo de projeto
+              </button>
+              <div class="dropdown-menu animated--fade-in container-fluid" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                <a class="dropdown-item" href="#">PIBIC</a>
+                <a class="dropdown-item" href="#">PIBITI</a>
+                <a class="dropdown-item" href="#">PIBEP</a>
+                <a class="dropdown-item" href="#">Outros</a>
+              </div>
+            </div>
+
+            <p>*Nome do projeto</p>
+            <form class="d-none d-sm-inline-block container-fluid">
+              <div class="input-group">
+                <input type="text" class="form-control border-0 small bg-gray-400 text-white" placeholder="Nome do projeto" aria-label="Search" aria-describedby="basic-addon2">
+              </div>
+            </form>
+            
+            <p>*Duração</p>
+            <div class="dropdown mb-4">
+              <button class="btn bg-gray-500 text-gray-100 dropdown-toggle container-fluid" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Vagas
+              </button>
+              <div class="dropdown-menu animated--fade-in container-fluid" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                <a class="dropdown-item" href="#">2º semestre de 2019 até o 1º semestre de 2020</a>
+                <a class="dropdown-item" href="#">2º semestre de 2020 até o 1º semestre de 2021</a>
+                <a class="dropdown-item" href="#">2º semestre de 2021 até o 1º semestre de 2022</a>
+                <a class="dropdown-item" href="#">2º semestre de 2022 até o 1º semestre de 2023</a>
+              </div>
+            </div>
+  
+            <p>*Quantidade máxima de vagas:</p>
+            <div class="dropdown mb-4">
+              <button class="btn bg-gray-500 text-gray-100 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Vagas
+              </button>
+              <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                <a class="dropdown-item" href="#">1 vaga</a>
+                <a class="dropdown-item" href="#">2 vagas</a>
+              </div>
+            </div>
+  
+            <p>Possui bolsa:</p>
+            <div class="dropdown mb-4">
+              <button class="btn bg-gray-500 text-gray-100 dropdown-toggle container-fluid" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Bolsas
+              </button>
+              <div class="dropdown-menu animated--fade-in container-fluid" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                <a class="dropdown-item" href="#">Sim</a>
+                <a class="dropdown-item" href="#">Não</a>
+                <a class="dropdown-item" href="#">Não tenho certeza</a>
+              </div>
+            </div>
+  
+            <p>Curso necessário:</p>
+            <div class="dropdown mb-4">
+              <button class="btn bg-gray-500 text-gray-100 dropdown-toggle container-fluid" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Curso necessário
+              </button>
+              <div class="dropdown-menu animated--fade-in container-fluid" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                <a class="dropdown-item" href="#">BSI</a>
+                <a class="dropdown-item" href="#">Ciências da computação</a>
+                <a class="dropdown-item" href="#">Jogos Digitais</a>
+                <a class="dropdown-item" href="#">Direito</a>
+              </div>
+            </div>
+
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+              <div></div>
+              <a href="#" class="d-none d-sm-inline-block btn btn-primary shadow-sm center"><i class="fas fa-sm text-white-50"></i>Cadastrar</a>
+            </div>
           </div>
 
         </div>
@@ -331,6 +405,14 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
+  <script src="js/demo/chart-bar-demo.js"></script>
 
 </body>
 
