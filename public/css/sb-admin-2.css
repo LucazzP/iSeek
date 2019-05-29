@@ -600,6 +600,10 @@ pre code {
     margin-left: auto;
 }
 
+.trans {
+    opacity: 0.8;
+}
+
 @media (min-width: 576px) {
     .container {
         max-width: 540px;
@@ -3517,6 +3521,26 @@ input[type="button"].btn-block {
     border-radius: 0.35rem;
 }
 
+.dropdown-menu-drops {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 0.85rem;
+    color: #858796;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+}
+
 .dropdown-menu-left {
     right: auto;
     left: 0;
@@ -5160,6 +5184,13 @@ input[type="button"].btn-block {
     padding: 0.75rem 1.25rem;
     margin-bottom: 0;
     background-color: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.card-drops {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 4px;
+    background-color: #fff;
     border-bottom: 1px solid #e3e6f0;
 }
 
@@ -12079,4 +12110,10 @@ body.sidebar-toggled footer.sticky-footer {
 
 .poppins {
     font-family: "Poppins", sans-serif; 
+}
+
+.background-pucpr {
+    background: url(../img/curitiba.jpg) no-repeat;
+    background-size: cover;
+    background-position: center right;
 }

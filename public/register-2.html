@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>iSeek - Registre-se</title>
+    <title>iSeek - Curso</title>
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700,700i|Poppins:400,400i,600,700,700i,800&display=swap" rel="stylesheet"> <!-- font-family: 'Poppins', sans-serif; | font-family: 'Montserrat', sans-serif; -->
@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="background-pucpr">
 
   <div class="container">
 
@@ -34,21 +34,19 @@
           <div class="col-lg-12">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Crie sua conta!</h1>
+                <h1 class="h4 text-gray-900 mb-4">Termine de criar sua conta!</h1>
               </div>
-              <form class="user">
-                <div class="form-group">
-                  <a href="#cursos" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
-                    <h6 class="m-0 font-weight-bold text-primary">Selecione seu curso</h6>
-                  </a>
-                  <div class="collapse" id="cursos" style="">
-                    <div class="card-body">
+              <div class="dropdown mb-4">
+                    <button class="btn btn-primary col-lg-12 dropdown-toggle center-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Selecione seu curso
+                    </button>
+                    <div class="dropdown-menu text-center col-lg-12" aria-labelledby="dropdownMenuButton" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">
                       <a class="dropdown-item" href="#">Sistemas de Informação</a>
                       <a class="dropdown-item" href="#">Jogos Digitais</a>
                       <a class="dropdown-item" href="#">Direito</a>
                     </div>
                   </div>
-                </div>
+              <form class="user">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user" id="FirstName" placeholder="Nome">
@@ -68,11 +66,11 @@
                     <input type="password" class="form-control form-control-user" id="RepeatPassword" placeholder="Repita Sua Senha">
                   </div>
                 </div>
+                <a href="login.html" style="font-size: 1rem" class="btn btn-primary btn-user btn-block" id="registerBtn">
+                  Registrar
+                </a>
+                <hr>
               </form>
-              <button href="login.html" class="btn btn-primary btn-user btn-block" id="registerBtn">
-                Register Account
-              </button>
-              <hr>
               <div class="text-center">
                 <a class="small" href="login.html">Já tem uma conta? Faça login!</a>
               </div>
@@ -92,13 +90,6 @@
   <script src="js/sb-admin-2.min.js"></script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
-  <!-- Add additional services that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-messaging.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-functions.js"></script>
-  
   <script src="js/app.js"></script>
   <script src="js/register.js"></script>
 
