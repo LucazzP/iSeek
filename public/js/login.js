@@ -16,8 +16,7 @@ btnlog.addEventListener('click', function() {
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
-
-        alert(errorMessage);
+        alert("e-mail ou senha invalidos")
         alert("Codigo de erro " + errorCode);
         console.log("error")
       });
