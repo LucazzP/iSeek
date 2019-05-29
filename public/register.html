@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="background-pucpr">
 
   <div class="container">
 
@@ -37,16 +37,15 @@
                 <h1 class="h4 text-gray-900 mb-4">Crie sua conta!</h1>
               </div>
               <form class="user">
-                <div class="form-group">
-                  <a href="#cursos" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
-                    <h6 class="m-0 font-weight-bold text-primary">Selecione seu curso</h6>
-                  </a>
-                  <div class="collapse" id="cursos" style="">
-                    <div class="card-body">
-                      <a class="dropdown-item" href="#">Sistemas de Informação</a>
-                      <a class="dropdown-item" href="#">Jogos Digitais</a>
-                      <a class="dropdown-item" href="#">Direito</a>
-                    </div>
+                <div class="mb-3 dropdown">
+                  <button style="font-size: 1em" class="btn btn-primary btn-user btn-block col-lg-12 dropdown-toggle center-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Selecione seu curso
+                  </button>
+                  <!-- PUXAR CURSOS FILHA DA PUTA -->
+                  <div class="dropdown-menu text-center col-lg-12 pre-scrollable" aria-labelledby="dropdownMenuButton" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">                   
+                    <a class="dropdown-item" href="#">Sistemas de Informação</a>
+                    <a class="dropdown-item" href="#">Jogos Digitais</a>
+                    <a class="dropdown-item" href="#">Direito</a>
                   </div>
                 </div>
                 <div class="form-group row">
@@ -68,15 +67,8 @@
                     <input type="password" class="form-control form-control-user" id="RepeatPassword" placeholder="Repita Sua Senha">
                   </div>
                 </div>
-                <a href="register-2.html" class="btn btn-primary btn-user btn-block" id="registerBtn">
+                <a style="font-size: 1em" href="login.html" class="btn btn-primary btn-user btn-block" id="registerBtn">
                   Registrar
-                </a>
-                <hr>
-                <a href="register-2.html" class="btn btn-google btn-user btn-block">
-                  <i class="fab fa-google fa-fw"></i> Registre-se c/ Google
-                </a>
-                <a href="register-2.html" class="btn btn-facebook btn-user btn-block">
-                  <i class="fab fa-facebook-f fa-fw"></i> Registre-se c/ Facebook
                 </a>
               </form>
               <hr>
@@ -85,7 +77,7 @@
               </div>
             </div>
         </div>
-
+      </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
