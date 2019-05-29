@@ -54,7 +54,7 @@
       <div class="sidebar-heading">
         Gerir projetos
       </div>
-
+    
       <!-- Nav Item - Novo projeto -->
       <li class="nav-item active">
         <a class="nav-link" href="new-project.html">
@@ -93,7 +93,7 @@
       <!-- Main Content -->
       <div id="content">
 
-                <!-- Topbar -->
+      <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
@@ -270,19 +270,75 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Novo projeto</h1>
+              </div>
+              <hr class="mb-3">
+              <form class="user">
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-user text-center" id="nomeProjeto" placeholder="Nome do projeto">
+                </div>
+                <hr>
+                <div class="mb-3 dropdown">
+                  <button style="font-size: 1em" class="btn btn-primary btn-user btn-block col-lg-12 dropdown-toggle center-block" type="button" id="tipoProjeto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tipo de projeto
+                  </button>
+                  <!-- PUXAR TIPOS DE PROJETOS FILHA DA PUTA -->
+                  <div class="dropdown-menu text-center col-lg-12 pre-scrollable" aria-labelledby="tipoProjeto" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">                   
+                    <a class="dropdown-item" href="#">PIBIC</a>
+                    <a class="dropdown-item" href="#">PIBITI</a>
+                    <a class="dropdown-item" href="#">PIBEP</a>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group row">
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                    <input type="date" class="form-control form-control-user text-center" id="duração" placeholder="Duração em semanas">
+                  </div>
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                    <input type="date" class="form-control form-control-user text-center" id="duração" placeholder="Duração em semanas">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="number" class="form-control form-control-user text-center" id="vagas" placeholder="Quantidade de vagas">
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                  <input type="date" class="form-control form-control-user" id="InputEmail" placeholder="Email">
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="password" class="form-control form-control-user" id="InputPassword" placeholder="Senha">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user" id="RepeatPassword" placeholder="Repita Sua Senha">
+                  </div>
+                </div>
+                <a style="font-size: 1em" href="login.html" class="btn btn-primary btn-user btn-block" id="registerBtn">
+                  Registrar
+                </a>
+              </form>
+              <hr>
+
+            </div>
+          </div>
+        </div>
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Novo Projeto</h1>
           </div>
 
-          <div class="text-lg">
+          <form class="text-lg" id="form-new-project">
 
             <p>*Tipo de projeto</p>
             <div class="dropdown mb-4">
               <button class="btn bg-gray-500 text-gray-100 dropdown-toggle container-fluid" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Tipo de projeto
               </button>
-              <div class="dropdown-menu animated--fade-in container-fluid" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+              <div class="dropdown-menu animated--fade-in container-fluid" id="type-project" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
                 <a class="dropdown-item" href="#">PIBIC</a>
                 <a class="dropdown-item" href="#">PIBITI</a>
                 <a class="dropdown-item" href="#">PIBEP</a>
@@ -350,7 +406,7 @@
               <div></div>
               <a href="#" class="d-none d-sm-inline-block btn btn-primary shadow-sm center"><i class="fas fa-sm text-white-50"></i>Cadastrar</a>
             </div>
-          </div>
+          </form>
 
         </div>
         <!-- /.container-fluid -->

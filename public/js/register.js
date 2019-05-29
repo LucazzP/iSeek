@@ -49,5 +49,4 @@ btnRegi.addEventListener('click', function() {
        alert("Digite uma senha válida!")
     }     
 
-
 });
