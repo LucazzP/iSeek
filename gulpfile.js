@@ -4,7 +4,7 @@
 const autoprefixer = require("gulp-autoprefixer");
 const browsersync = require("browser-sync").create();
 const cleanCSS = require("gulp-clean-css");
-// const del = require("del");
+const del = require("del");
 const gulp = require("gulp");
 const header = require("gulp-header");
 const merge = require("merge-stream");
@@ -44,7 +44,7 @@ function browserSyncReload(done) {
 
 // Clean vendor
 function clean() {
-  return del(["./public/vendor/"]);
+  return del(["./vendor/"]);
 }
 
 // Bring third party dependencies from node_modules into vendor directory
@@ -64,13 +64,13 @@ function modules() {
       './node_modules/datatables.net-bs4/js/*.js',
       './node_modules/datatables.net-bs4/css/*.css'
     ])
-    .pipe(gulp.dest('./public/vendor/datatables'));
+    .pipe(gulp.dest('./vendor/datatables'));
   // Font Awesome
   var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*')
-    .pipe(gulp.dest('./public/vendor'));
+    .pipe(gulp.dest('./vendor'));
   // jQuery Easing
   var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
-    .pipe(gulp.dest('./public/vendor/jquery-easing'));
+    .pipe(gulp.dest('./vendor/jquery-easing'));
   // jQuery
   var jquery = gulp.src([
       './node_modules/jquery/dist/*',
@@ -97,7 +97,7 @@ function css() {
     .pipe(header(banner, {
       pkg: pkg
     }))
-    .pipe(gulp.dest("./css"))
+    .pipe(gulp.dest("./public/css"))
     .pipe(rename({
       suffix: ".min"
     }))
@@ -128,7 +128,7 @@ function js() {
 function watchFiles() {
   gulp.watch("./public/scss/**/*", css);
   gulp.watch("./public/js/**/*", js);
-  gulp.watch("./public/**/*.html", browserSyncReload);
+  gulp.watch("./**/*.html", browserSyncReload);
 }
 
 // Define complex tasks

@@ -331,14 +331,14 @@
             <h1 class="h3 mb-0 text-gray-800">Novo Projeto</h1>
           </div>
 
-          <div class="text-lg">
+          <form class="text-lg" id="form-new-project">
 
             <p>*Tipo de projeto</p>
             <div class="dropdown mb-4">
               <button class="btn bg-gray-500 text-gray-100 dropdown-toggle container-fluid" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Tipo de projeto
               </button>
-              <div class="dropdown-menu animated--fade-in container-fluid" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+              <div class="dropdown-menu animated--fade-in container-fluid" id="type-project" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
                 <a class="dropdown-item" href="#">PIBIC</a>
                 <a class="dropdown-item" href="#">PIBITI</a>
                 <a class="dropdown-item" href="#">PIBEP</a>
@@ -406,7 +406,7 @@
               <div></div>
               <a href="#" class="d-none d-sm-inline-block btn btn-primary shadow-sm center"><i class="fas fa-sm text-white-50"></i>Cadastrar</a>
             </div>
-          </div>
+          </form>
 
         </div>
         <!-- /.container-fluid -->

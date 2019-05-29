@@ -1,5 +1,4 @@
-
-// Your web app's Firebase configuration
+// // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyD6l1OmJEArC-M8ZddQrmdQdmbd9igst-E",
     authDomain: "iseek-fb.firebaseapp.com",
@@ -11,7 +10,3 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
-
-
-
