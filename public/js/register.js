@@ -24,7 +24,7 @@ btnRegi.addEventListener('click', function() {
         alert(errorMessage);
         alert("Codigo de erro " + errorCode);
         console.log("error")
-      });
+    });
     //Enviando ao firestoreDB os dados do usuario
     setDoc = firestore.collection("users").doc().set({
         nome: nameRegister.value,
@@ -37,5 +37,5 @@ btnRegi.addEventListener('click', function() {
     .catch(function(error){
         console.log("erro", error)
     });
-
+    
 });
