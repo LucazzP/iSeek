@@ -46,33 +46,6 @@ function loadMessages() {
   });
 }
 
-// Saves the messaging device token to the datastore.
-function saveMessagingDeviceToken() {
-  firebase.messaging().getToken().then(function(currentToken) {
-    if (currentToken) {
-      console.log('Got FCM device token:', currentToken);
-      // Saving the Device Token to the datastore.
-      firebase.firestore().collection('fcmTokens').doc(currentToken)
-          .set({uid: firebase.auth().currentUser.uid});
-    } else {
-      // Need to request permissions to show notifications.
-      requestNotificationsPermissions();
-    }
-  }).catch(function(error){
-    console.error('Unable to get messaging token.', error);
-  });
-}
-
-// Requests permissions to show notifications.
-function requestNotificationsPermissions() {
-  console.log('Requesting notifications permission...');
-  firebase.messaging().requestPermission().then(function() {
-    // Notification permission granted.
-    saveMessagingDeviceToken();
-  }).catch(function(error) {
-    console.error('Unable to get permission to notify.', error);
-  });
-}
 
 // Triggered when the send new message form is submitted.
 function onMessageFormSubmit(e) {
@@ -189,7 +162,7 @@ function displayMessage(id, timestamp, uidReciever, text) {
     // Replace all line breaks by <br>.
     messageElement.innerHTML = messageElement.innerHTML.replace(/\n/g, '<br>');
     var messageElement = div.querySelector('.time_date');
-    messageElement.textContent = new Date(timestamp['seconds'] * 1000);
+    messageElement.textContent = new Date(timestamp['seconds'] * 1000).toLocaleDateString() + ' ' + new Date(timestamp['seconds'] * 1000).toLocaleTimeString();
   // Show the card fading-in and scroll to view the new message.
   setTimeout(function() {div.classList.add('visible')}, 1);
   messageListElement.scrollTop = messageListElement.scrollHeight;
@@ -219,7 +192,6 @@ function resolverDepoisDe1Segundos() {
     return new Promise(resolve => {
       setTimeout(() => {
         loadMessages();
-        saveMessagingDeviceToken();
       }, 1000);
     });
 }
