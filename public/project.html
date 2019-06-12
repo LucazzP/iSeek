@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>iSeek - Novo Projeto</title>
+  <title>iSeek - Chat</title>
 
   <!-- Custom fonts for this template-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700,700i|Poppins:400,400i,600,700,700i,800&display=swap" rel="stylesheet"> <!-- font-family: 'Poppins', sans-serif; | font-family: 'Montserrat', sans-serif; -->
@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link href="css/sb-admin-2.css" rel="stylesheet">
 
 </head>
@@ -54,9 +54,9 @@
       <div class="sidebar-heading">
         Gerir projetos
       </div>
-    
+
       <!-- Nav Item - Novo projeto -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="new-project.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Novo projeto</span></a>
@@ -93,7 +93,7 @@
       <!-- Main Content -->
       <div id="content">
 
-      <!-- Topbar -->
+        <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
@@ -270,143 +270,11 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="p-5">
-              <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Novo projeto</h1>
-              </div>
-              <hr class="mb-3">
-              <form class="user">
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-user text-center" id="nomeProjeto" placeholder="Nome do projeto">
-                </div>
-                <hr>
-                <div class="mb-3 dropdown">
-                  <button style="font-size: 1em" class="btn btn-primary btn-user btn-block col-lg-12 dropdown-toggle center-block" type="button" id="tipoProjeto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Tipo de projeto
-                  </button>
-                  <!-- PUXAR TIPOS DE PROJETOS FILHA DA PUTA -->
-                  <div class="dropdown-menu text-center col-lg-12 pre-scrollable" aria-labelledby="tipoProjeto" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">                   
-                    <a class="dropdown-item" href="#">PIBIC</a>
-                    <a class="dropdown-item" href="#">PIBITI</a>
-                    <a class="dropdown-item" href="#">PIBEP</a>
-                  </div>
-                </div>
-                <hr>
-                <div class="form-group row">
-                  <div class="col-sm-3 mb-3 mb-sm-0">
-                    <input type="date" class="form-control form-control-user text-center" id="duração" placeholder="Duração em semanas">
-                  </div>
-                  <div class="col-sm-3 mb-3 mb-sm-0">
-                    <input type="date" class="form-control form-control-user text-center" id="duração" placeholder="Duração em semanas">
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="number" class="form-control form-control-user text-center" id="vagas" placeholder="Quantidade de vagas">
-                  </div>
-                </div>
-                <hr>
-                <div class="form-group">
-                  <input type="date" class="form-control form-control-user" id="InputEmail" placeholder="Email">
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="InputPassword" placeholder="Senha">
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="RepeatPassword" placeholder="Repita Sua Senha">
-                  </div>
-                </div>
-                <a style="font-size: 1em" href="index.html" class="btn btn-primary btn-user btn-block" id="registerBtn">
-                  Registrar
-                </a>
-              </form>
-              <hr>
-
-            </div>
-          </div>
-        </div>
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Novo Projeto</h1>
+            <h1 class="h3 mb-0 text-gray-800" id='nome-projeto'></h1>
+            <p></p>
           </div>
-
-          <form class="text-lg" id="form-new-project">
-
-            <p>*Tipo de projeto</p>
-            <div class="dropdown mb-4">
-              <button class="btn bg-gray-500 text-gray-100 dropdown-toggle container-fluid" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Tipo de projeto
-              </button>
-              <div class="dropdown-menu animated--fade-in container-fluid" id="type-project" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                <a class="dropdown-item" href="#">PIBIC</a>
-                <a class="dropdown-item" href="#">PIBITI</a>
-                <a class="dropdown-item" href="#">PIBEP</a>
-                <a class="dropdown-item" href="#">Outros</a>
-              </div>
-            </div>
-
-            <p>*Nome do projeto</p>
-            <form class="d-none d-sm-inline-block container-fluid">
-              <div class="input-group">
-                <input type="text" class="form-control border-0 small bg-gray-400 text-white" placeholder="Nome do projeto" aria-label="Search" aria-describedby="basic-addon2">
-              </div>
-            </form>
-            
-            <p>*Duração</p>
-            <div class="dropdown mb-4">
-              <button class="btn bg-gray-500 text-gray-100 dropdown-toggle container-fluid" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Vagas
-              </button>
-              <div class="dropdown-menu animated--fade-in container-fluid" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                <a class="dropdown-item" href="#">2º semestre de 2019 até o 1º semestre de 2020</a>
-                <a class="dropdown-item" href="#">2º semestre de 2020 até o 1º semestre de 2021</a>
-                <a class="dropdown-item" href="#">2º semestre de 2021 até o 1º semestre de 2022</a>
-                <a class="dropdown-item" href="#">2º semestre de 2022 até o 1º semestre de 2023</a>
-              </div>
-            </div>
-  
-            <p>*Quantidade máxima de vagas:</p>
-            <div class="dropdown mb-4">
-              <button class="btn bg-gray-500 text-gray-100 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Vagas
-              </button>
-              <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                <a class="dropdown-item" href="#">1 vaga</a>
-                <a class="dropdown-item" href="#">2 vagas</a>
-              </div>
-            </div>
-  
-            <p>Possui bolsa:</p>
-            <div class="dropdown mb-4">
-              <button class="btn bg-gray-500 text-gray-100 dropdown-toggle container-fluid" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Bolsas
-              </button>
-              <div class="dropdown-menu animated--fade-in container-fluid" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                <a class="dropdown-item" href="#">Sim</a>
-                <a class="dropdown-item" href="#">Não</a>
-                <a class="dropdown-item" href="#">Não tenho certeza</a>
-              </div>
-            </div>
-  
-            <p>Curso necessário:</p>
-            <div class="dropdown mb-4">
-              <button class="btn bg-gray-500 text-gray-100 dropdown-toggle container-fluid" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Curso necessário
-              </button>
-              <div class="dropdown-menu animated--fade-in container-fluid" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                <a class="dropdown-item" href="#">BSI</a>
-                <a class="dropdown-item" href="#">Ciências da computação</a>
-                <a class="dropdown-item" href="#">Jogos Digitais</a>
-                <a class="dropdown-item" href="#">Direito</a>
-              </div>
-            </div>
-
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-              <div></div>
-              <a href="#" class="d-none d-sm-inline-block btn btn-primary shadow-sm center"><i class="fas fa-sm text-white-50"></i>Cadastrar</a>
-            </div>
-          </form>
 
         </div>
         <!-- /.container-fluid -->
@@ -463,6 +331,17 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-functions.js"></script>
+  
+  <script src="js/app.js"></script>
+  <script src="js/project.js"></script>
 
 </body>
 
