@@ -73,5 +73,5 @@ projectRef.get().then(function(docs){
      var data = doc.data();
       // projectRef.add(doc.data())
       createCardProject(doc.id, data['description'], data['nome-projeto'], data['nome-professor']);
-    })
-})
+    });
+});
