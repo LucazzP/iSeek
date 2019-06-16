@@ -26,14 +26,25 @@ temBolsa.addEventListener('click', function(value){
 });
 
 registerBtn.addEventListener('click', function(){
-    console.log(dropProjetosButton.innerText);
+    var cursos = [];
     if(nomeProjeto.value != ''){
         if(dropProjetosButton.innerText != 'Tipo de projeto '){
             if(duracaoBtn.innerText != 'Período '){
                 if(vagas.value != ''){
                     if(temBolsaBtn.innerText != 'Tem Bolsa? '){
-                        if(aptidaoCurso.innerText != 'Aptidão de curso '){
-                            
+                        $.each($("input[name='curso']:checked"), function(){            
+                            cursos.push($(this).val());
+                        });
+                        if(cursos.length != 0){
+                            firebase.firestore().collection('projetos').add({
+                                "bolsa": temBolsa.innerText,
+                                "curso-necessario": cursos,
+                                "description" : "",
+                                "duracao": duracao.innerText,
+                                "id-alunos": [],
+                                "id-professor": ""
+                            }
+                            );
                         } else alert("Selecione os cursos requisitatos para a vaga!");
                     } else alert("Selecione se seu projeto possui bolsa!");
                 } else alert("Digite a quantidades de vagas para seu projeto!");
