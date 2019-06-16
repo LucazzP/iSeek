@@ -12155,6 +12155,8 @@ body.sidebar-toggled footer.sticky-footer {
     border: 1px solid #ddd;
     clear: both;
     overflow: hidden;
+    overflow: scroll;
+    height: 800px;
 }
 
 .top_spac {
