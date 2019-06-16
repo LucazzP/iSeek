@@ -9,9 +9,9 @@ var dropCursos = document.getElementById('dropCursos');
 var dropCursosButton = document.getElementById('dropdownMenuButton');
 
 
-
 //Adicionando usuario e senha
 btnRegi.addEventListener('click', function() {
+    var typeUser = $("input[name='typeUser']:checked");
     //Usuario e senha
     if(passwordRegister.value == passwordRegister2.value){
         if(nameRegister.value != ''){
@@ -28,12 +28,13 @@ btnRegi.addEventListener('click', function() {
                                 sobrenome: lastNameRegister.value,
                                 email: emailRegister.value,
                                 dataconta: timestamp,
-                                curso:dropCursosButton.innerHTML
-                        })
-                        .then(function(){
-                            console.log("Arquivo gravado com sucesso!");
-                            window.location.replace('plataform.html');
-                        });
+                                curso:dropCursosButton.innerHTML,
+                                typeUser: typeUser.val()
+                            })
+                            .then(function(){
+                                console.log("Arquivo gravado com sucesso!");
+                                window.location.replace('plataform.html');
+                            });
                             
                         }).catch(function(error) {
                             var errorCode = error.code;

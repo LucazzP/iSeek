@@ -26,14 +26,6 @@ function loadPage(id) {
     });
 }
 
-function resolverDepoisDe1Segundos() {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            loadPage(id);
-        }, 1000);
-    });
-}
-
 const drag = (event) => {
     event.dataTransfer.setData("text/plain", event.target.id);
 }
@@ -238,7 +230,9 @@ addCard(1);
 addCard(2);
 addCard(3);
 
-resolverDepoisDe1Segundos();
+firebase.auth().onAuthStateChanged(function(authData){
+    loadPage(id);
+});
 
 // projectRef.get().then(function(docs){
 //    docs.forEach(function(doc) {
