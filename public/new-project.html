@@ -228,7 +228,7 @@
                   Perfil
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal" id="btn-sair">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Sair
                 </a>
@@ -299,13 +299,13 @@
                     <!-- Cursos aptos -->
                     <div class="dropdown-menu text-center col-lg-12" aria-labelledby="aptidaoCurso" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">                   
                       <input type="checkbox">  Sistemas de Informação<br>
-                      <input type="checkbox">  Técnologia em Jogos Digitais<br>
+                      <input type="checkbox">  Tecnologia em Jogos Digitais<br>
                       <input type="checkbox">  Ciências da Computação<br>
                     </div>
                   </div>
                 </div>
                 <hr>
-                <a style="font-size: 1em" href="index.html" class="btn btn-primary btn-user btn-block" id="registerBtn">
+                <a style="font-size: 1em" href="" class="btn btn-primary btn-user btn-block" id="registerBtn">
                   Criar novo projeto
                 </a>
               </form>
@@ -314,6 +314,14 @@
             </div>
           </div>
         </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-functions.js"></script>
           
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -324,7 +332,9 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/utilities.js"></script>
+  <script src="js/new-project.js"></script>
 
 </body>
 

@@ -52,21 +52,25 @@ const clearDrop = (ev) => {
 }
 
 const drop = (event) => {
-event.preventDefault();
-const data = event.dataTransfer.getData("text/plain");
-const element = document.querySelector(`#${data}`);
-try {
-    // remove the spacer content from dropzone
-    event.target.removeChild(event.target.firstChild);
-    // add the draggable content
-    event.target.appendChild(element);
-    // remove the dropzone parent
-    unwrap(event.target);
-} catch (error) {
-    console.warn("can't move the item to the same place")
-}
-updateDropzones();
-}
+    event.preventDefault();
+    const data = event.dataTransfer.getData("text/plain");
+    const element = document.querySelector(`#${data}`);
+    try {
+        // remove the spacer content from dropzone
+        event.target.removeChild(event.target.firstChild);
+        $('.blocNoItem').remove();
+
+        // add the draggable content
+        event.target.appendChild(element);
+        
+        
+        // remove the dropzone parent
+        unwrap(event.target);
+    } catch (error) {
+        console.warn("can't move the item to the same place");
+    }
+    updateDropzones();
+};
 
 const updateDropzones = () => {
     /* after dropping, refresh the drop target areas
@@ -75,16 +79,16 @@ const updateDropzones = () => {
     
     var dz = $('<div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>');
 
-
+    // updateEmpthyFields();
     
     // delete old dropzones
-    $('.dropzone').remove();
+    // $('.dropzone').remove();
 
     // insert new dropdzone after each item   
     dz.insertAfter('.card.draggable');
     
     // insert new dropzone in any empty swimlanes
-    $(".items:not(:has(.card.draggable))").append(dz);
+    // $(".items:not(:has(.card.draggable))").append(dz);
 };
 
 // helpers
@@ -107,7 +111,7 @@ function unwrap(node) {
     node.replaceWith(...node.childNodes);
 }  
 
-const blocNoItemKanban = '<div class="card shadow-sm" id="cd2" draggable="false">'+
+const blocNoItemKanban = '<div class="card shadow-sm blocNoItem" id="cd2" draggable="false">'+
                                 '<div class="card-body p-2">'+
                                     '<p style="text-align: center">'+
                                         'Não há nenhuma tarefa cadastrada!'+
@@ -128,6 +132,8 @@ const blocItemKanban = '<div class="card draggable shadow-sm" id="cd1" draggable
                         '</div>'+
                     '</div>'+
                     '<div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>';
+
+const dropZone = '<div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>';
 
 function addCard(field){
     switch (field){
@@ -183,7 +189,50 @@ function addCard(field){
 }
 
 function updateEmpthyFields(){
-    
+    var fields = [0,1,2,3];
+    fields.forEach(function(field){
+        switch (field){
+            case 0:
+                if(divAfazer.innerHTML == dropZone){
+                    console.log(divAfazer.innerHTML);
+                    
+                    console.log(divAfazer.innerHTML);
+                    hasItemsinCard[field] = false;
+                } else{
+                    $('.blocNoItem').remove();
+                    hasItemsinCard[field] = true;
+                }
+                break;
+            case 1:
+                if(divEmProgresso.innerHTML == dropZone){
+                    // console.log(divEmProgresso.innerHTML);
+                    divEmProgresso.innerHTML = blocNoItemKanban;
+                    hasItemsinCard[field] = false;
+                } else {
+                    $('.blocNoItem').remove();
+                    hasItemsinCard[field] = true;
+                }
+                break;
+            case 2:
+                if(divPronto.innerHTML == dropZone){
+                    divPronto.innerHTML = blocNoItemKanban;
+                    hasItemsinCard[field] = false;
+                } else {
+                    $('.blocNoItem').remove();
+                    hasItemsinCard[field] = true;
+                }
+                break;
+            case 3:
+                if(divFinalizado.innerHTML == dropZone){
+                    divFinalizado.innerHTML = blocNoItemKanban;
+                    hasItemsinCard[field] = false;
+                } else {
+                    $('.blocNoItem').remove();
+                    hasItemsinCard[field] = true;
+                }
+                break;
+        }
+    });
 }
 
 addCard(0);
