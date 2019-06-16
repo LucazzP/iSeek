@@ -45,6 +45,7 @@ registerBtn.addEventListener('click', function(){
                                 "duracao": duracaoBtn.innerText,
                                 "id-alunos": [],
                                 "id-professor": firebase.auth().currentUser.uid,
+                                "nome-alunos": [],
                                 "nome-professor": username.innerText,
                                 "nome-projeto": nomeProjeto.value,
                                 "tipo": dropProjetosButton.innerText,

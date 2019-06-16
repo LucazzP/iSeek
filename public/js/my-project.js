@@ -17,11 +17,9 @@ function loadPage(id) {
         data = doc.data();
         projectName = data['nome-projeto'];
 
-        db.collection('users').doc(data['id-alunos'][0]).get().then(function(doc) {
-            participantName = doc.data()['nome'];
-        }).then(function() {
-            nomeAluno.innerHTML = participantName;
-        });
+        if(doc.data()['id-alunos'] != []){
+            participantName = doc.data()['nome-alunos'][0];
+        } else participantName = 'Não há alunos!';
 
     }).then(function() {
         nomeProjeto.innerHTML = projectName;
