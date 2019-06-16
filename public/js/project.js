@@ -20,11 +20,18 @@ function loadPage(id){
 
     }).then(function(){
         nomeProjeto.innerHTML = projectName;
-        console.log(participantName);
     });
 }
 
-loadPage(id);
+function resolverDepoisDe1Segundos() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        loadPage(id);
+      }, 1000);
+    });
+}
+
+resolverDepoisDe1Segundos();
 
 // projectRef.get().then(function(docs){
 //    docs.forEach(function(doc) {

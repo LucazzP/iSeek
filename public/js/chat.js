@@ -49,7 +49,7 @@ function loadMessages() {
 
 // Triggered when the send new message form is submitted.
 function onMessageFormSubmit(e) {
-  e.preventDefault();
+  // e.preventDefault();
   // Check that the user entered a message and is signed in.
   if (messageInputElement.value && checkSignedInWithMessage()) {
     saveMessage(messageInputElement.value, selectedReciever).then(function() {
@@ -185,6 +185,12 @@ function checkSetup() {
     window.alert('You have not configured and imported the Firebase SDK. ' +
         'Make sure you go through the codelab setup instructions and make ' +
         'sure you are running the codelab using `firebase serve`');
+  }
+}
+
+function verifyButtonAndSend(event){
+  if (event.keyCode == 13) {
+    onMessageFormSubmit();
   }
 }
 

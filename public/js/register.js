@@ -18,8 +18,8 @@ btnRegi.addEventListener('click', function() {
             if(lastNameRegister.value != ''){
                 if(emailRegister.value != ''){
                     if(dropCursosButton.innerText != 'Selecione seu curso '){
-                        firebase.auth().createUserWithEmailAndPassword(emailRegister.value, passwordRegister.value).then(function(result){
 
+                        firebase.auth().createUserWithEmailAndPassword(emailRegister.value, passwordRegister.value).then(function(result){
                             console.log("Success");
                             //enviando informacoes para o db
                             var uid = firebase.auth().currentUser.uid;
@@ -40,6 +40,7 @@ btnRegi.addEventListener('click', function() {
                             var errorMessage = error.message;
                             alert("Codigo de erro " + errorCode + '#' + errorMessage);
                         });
+                        
                     } else alert('Selecione seu curso!');
                 } else alert('Digite um email válido!');
             } else alert('Digite um sobrenome válido!');
