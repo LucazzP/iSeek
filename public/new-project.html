@@ -228,7 +228,7 @@
                   Perfil
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal" id="btn-sair">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Sair
                 </a>
@@ -256,11 +256,11 @@
                 </div>
                 <hr>
                 <div class="mb-3 dropdown">
-                  <button style="font-size: 1em" class="btn btn-primary btn-user btn-block col-lg-12 dropdown-toggle center-block" type="button" id="tipoProjeto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button style="font-size: 1em" class="btn btn-primary btn-user btn-block col-lg-12 dropdown-toggle center-block" type="button" id="btnTipoProjeto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Tipo de projeto
                   </button>
                   <!-- TIPOS DE Projeto-->
-                  <div class="dropdown-menu text-center col-lg-12 pre-scrollable" aria-labelledby="tipoProjeto" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">                   
+                  <div class="dropdown-menu text-center col-lg-12 pre-scrollable" id="tipoProjeto" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">                   
                     <a class="dropdown-item" href="#">PIBIC</a>
                     <a class="dropdown-item" href="#">PIBITI</a>
                     <a class="dropdown-item" href="#">PIBEP</a>
@@ -269,11 +269,11 @@
                 <hr>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-6 mb-sm-0">
-                    <button style="font-size: 0.8em" class="btn btn-terciary btn-user btn-block col-lg-12 dropdown-toggle center-block" type="button" id="duracao" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button style="font-size: 0.8em" class="btn btn-terciary btn-user btn-block col-lg-12 dropdown-toggle center-block" type="button" id="duracaoBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Período
                     </button>
                     <!-- Datas de inicio do curso-->
-                    <div class="dropdown-menu text-center col-lg-12 pre-scrollable" aria-labelledby="duracao" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">                   
+                    <div class="dropdown-menu text-center col-lg-12 pre-scrollable" id="duracao" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">                   
                       <a class="dropdown-item" href="#">2º semestre de 2019 até o 1º semestre de 2020</a>
                       <a class="dropdown-item" href="#">1º semestre de 2020 até o 2º semestre de 2020</a>
                       <a class="dropdown-item" href="#">2º semestre de 2020 até o 1º semestre de 2021</a>
@@ -283,29 +283,29 @@
                     <input type="number" class="form-control form-control-user text-center" id="vagas" placeholder="Quantidade de vagas">
                   </div>
                   <div class="col-sm-3 mb-3 mb-sm-0">
-                    <button style="font-size: 0.8em" class="btn btn-terciary btn-user btn-block col-lg-12 dropdown-toggle center-block" type="button" id="temBolsa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button style="font-size: 0.8em" class="btn btn-terciary btn-user btn-block col-lg-12 dropdown-toggle center-block" type="button" id="temBolsaBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Tem Bolsa?
                     </button>
                     <!-- -Possui bolsa? -->
-                    <div class="dropdown-menu text-center col-lg-12" aria-labelledby="temBolsa" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">                   
+                    <div class="dropdown-menu text-center col-lg-12" id="temBolsa" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">                   
                       <a class="dropdown-item" href="#">Sim</a>
                       <a class="dropdown-item" href="#">Não</a>
                     </div>
                   </div>
                   <div class="col-sm-12 mb-12 mt-3 mb-sm-0">
-                  <button style="font-size: 0.8em" class="btn btn-terciary btn-user btn-block col-lg-12 dropdown-toggle center-block" type="button" id="aptidaoCurso" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button style="font-size: 0.8em" class="btn btn-terciary btn-user btn-block col-lg-12 dropdown-toggle center-block" type="button" id="aptidaoCursoBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Aptidão de curso
                     </button>
                     <!-- Cursos aptos -->
-                    <div class="dropdown-menu text-center col-lg-12" aria-labelledby="aptidaoCurso" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">                   
+                    <div class="dropdown-menu text-center col-lg-12" id="aptidaoCurso" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">                   
                       <input type="checkbox">  Sistemas de Informação<br>
-                      <input type="checkbox">  Técnologia em Jogos Digitais<br>
+                      <input type="checkbox">  Tecnologia em Jogos Digitais<br>
                       <input type="checkbox">  Ciências da Computação<br>
                     </div>
                   </div>
                 </div>
                 <hr>
-                <a style="font-size: 1em" href="index.html" class="btn btn-primary btn-user btn-block" id="registerBtn">
+                <a style="font-size: 1em" href="#" class="btn btn-primary btn-user btn-block" id="registerBtn">
                   Criar novo projeto
                 </a>
               </form>
@@ -314,6 +314,14 @@
             </div>
           </div>
         </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-functions.js"></script>
           
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -324,7 +332,9 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/utilities.js"></script>
+  <script src="js/new-project.js"></script>
 
 </body>
 
