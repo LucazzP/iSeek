@@ -6,6 +6,7 @@ var id = window.location.href.split('?')[1].split('#')[0].split(',')[0];
 var projectName = '';
 var participantName = '';
 var btnCreateCard = document.getElementById('btn-createCard');
+var btnSaveTask = document.getElementById('btn_save');
 var divAfazer = document.getElementById('divAfazer');
 var divEmProgresso = document.getElementById('divEmProgresso');
 var divPronto = document.getElementById('divPronto');
@@ -113,18 +114,21 @@ const blocNoItemKanban = '<div class="card shadow-sm blocNoItem" id="cd2" dragga
 const blocItemKanban = '<div class="card draggable shadow-sm" id="cd1" draggable="true" ondragstart="drag(event)">' +
     '<div class="card-body p-2">' +
     '<div class="card-title">' +
-    '<a href="" class="lead font-weight-light">TSK-154</a>' +
+    '<a "" class="lead font-weight-light">Tarefa</a>' +
     '</div>' +
     '<p>' +
-    'This is a description of a item on the board.' +
+    '<input type="text" class="form-control form-control-user" id="content" placeholder="Digite o conteudo">' +
     '</p>' +
-    '<button class="btn btn-primary btn-sm">View</button>' +
+    '<button id="btn_save" class="btn btn-primary btn-sm">Salvar</button>' +
     '</div>' +
     '</div>' +
     '<div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>';
 
 const dropZone = '<div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>';
 
+btnSaveTask.addEventListener('click', function(){
+    
+});
 function addCard(field) {
     switch (field) {
         case 0:
@@ -175,8 +179,10 @@ function addCard(field) {
                 }
             }
             break;
+       }
     }
-}
+//});
+
 
 function updateEmpthyFields() {
     var fields = [0, 1, 2, 3];
