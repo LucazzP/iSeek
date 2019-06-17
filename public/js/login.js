@@ -18,13 +18,13 @@ btnlog.addEventListener('click', function() {
         // ...
         alert("e-mail ou senha invalidos")
         alert("Codigo de erro " + errorCode);
-        console.log("error")
+        console.log("error");
       });
 });
 
 // Returns the signed-in user's profile Pic URL.
 function getProfilePicUrl() {
-    return firebase.auth().currentUser.photoURL
+    return firebase.auth().currentUser.photoURL;
 }
 
 // Returns the signed-in user's display name.

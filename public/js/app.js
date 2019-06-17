@@ -91,7 +91,13 @@ function checkIfIsProfessor(uid){
 function checkIfHaveProjects(uid){
     firebase.firestore().collection('projetos').where('id-alunos', "array-contains", uid).get().then(function(data){
         var nav = document.getElementById('gerirProjectosNav');
-        if(data.empty){
+        if(!data.empty){
+            nav.innerHTML = navHTML;
+        }
+    });
+    firebase.firestore().collection('projetos').where('id-professor', "==", uid).get().then(function(data){
+        var nav = document.getElementById('gerirProjectosNav');
+        if(!data.empty){
             nav.innerHTML = navHTML;
         }
     });
