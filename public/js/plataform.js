@@ -63,7 +63,8 @@ function createCardProject(id, description, name, professor) {
     professorElement.innerHTML = div.getAttribute('professor');
 
     // var verMais = document.getElementById('verMais');
-    verMaisElement.setAttribute('href', 'project.html?' + id);
+    verMaisElement.setAttribute('href', 'index.html?' + id + ',project');
+    verMaisElement.setAttribute('onclick', '$("#body").load("project.html);');
 
     projectsDiv.innerHTML += div.innerHTML;
 }
