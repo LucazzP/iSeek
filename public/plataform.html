@@ -32,70 +32,74 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Projetos</h1>
-            <a href="#" class="btn btn-primary btn-icon-split">
+            <a href="#" class="btn btn-primary btn-icon-split" id="btnSearchPopUp" data-toggle="modal" data-target="#exampleModalCenter">
                 <span class="icon text-white-100">
                   <i class="fas fa-search"></i>
                 </span>
                 <span class="text">Procurar por projetos</span>
             </a>
         </div>
-
-        <!-- Modal -->
-        <div style="display: none;" class="container-fluid">
-
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="h4">Buscar Projetos</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="h4">Buscar Projetos</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <div align="right">
+                    <a href="#" class="btn btn-primary btn-icon-split mb-3">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-filter"></i>
+                        </span>
+                        <span class="text">Filtrar</span>
+                    </a>
                 </div>
-                <div class="modal-body">
-                    <div align="right">
-                        <a href="#" class="btn btn-primary btn-icon-split mb-3">
-                            <span class="icon text-white-50">
-                                <i class="fas fa-filter"></i>
-                            </span>
-                            <span class="text">Filtrar</span>
-                        </a>
-                    </div>
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <i style="font-size: 200px;" class="fas fa-user-circle pl-5"></i>
-                                </div>
-                                <div style="border-right: 1px #080808 solid" class="col-lg-2">
-                                    <p style="color: #000" class="h4 pt-2" id="nomeProfessor">#nomeDaProfessor</p>
-                                    <p style="color: #000" class="h5 pt-2" id="vagas">#vagas</p>
-                                    <p style="color: #000" class="h5 pt-2" id="temBolsa">#temBolsa</p>
-                                    <p style="color: #000" class="h5 pt-2" id="duracao">#duracao</p>
-                                </div>
-                                <div style="border-right: 1px #080808 solid" class="pl-4 col-lg-4">
-                                    <p style="color: #000" class="h4 pt-2">Descrição do projeto:</p>
-                                    <p style="color: #000" class="h5 pt-2 align-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla ab perspiciatis fugiat eius assumenda placeat iste soluta excepturi nihil quaerat rerum error rem fuga nisi ut enim maxime, ea eum?</p>
-                                </div>
-                                <div class="pl-4 col-lg-3">
-                                    <p style="color: #000" class="h4 pt-2">Cursos possíveis:</p>
-                                    <ul>
-                                        <li class="h5 pt-1">Sistemas de Informação</li>
-                                        <li class="h5 pt-1">Jogos Digitais</li>
-                                        <li class="h5 pt-1">Ciências da Computação</li>
-                                    </ul>
-                                </div>
-                                <div align="center" class="col-lg-1 mt-4">
-                                    <a class="btn btn-primary" style="text-decoration: none" href="#">
-                                        <i style="font-size: 80px;color: #fff;" class="fas fa-heart primary"></i>
-                                        <p class="text-subpucpr mt-2 m-0">Demonstrar<br>Interesse</p>
-                                    </a>
-                                </div>
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <i style="font-size: 200px;" class="fas fa-user-circle pl-5"></i>
+                            </div>
+                            <div style="border-right: 1px #080808 solid" class="col-lg-2">
+                                <p style="color: #000" class="h4 pt-2" id="nomeProfessor">#nomeDaProfessor</p>
+                                <p style="color: #000" class="h5 pt-2" id="vagas">#vagas</p>
+                                <p style="color: #000" class="h5 pt-2" id="temBolsa">#temBolsa</p>
+                                <p style="color: #000" class="h5 pt-2" id="duracao">#duracao</p>
+                            </div>
+                            <div style="border-right: 1px #080808 solid" class="pl-4 col-lg-4">
+                                <p style="color: #000" class="h4 pt-2">Descrição do projeto:</p>
+                                <p style="color: #000" class="h5 pt-2 align-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla ab perspiciatis fugiat eius assumenda placeat iste soluta excepturi nihil quaerat rerum error rem fuga nisi ut enim maxime, ea eum?</p>
+                            </div>
+                            <div class="pl-4 col-lg-3">
+                                <p style="color: #000" class="h4 pt-2">Cursos possíveis:</p>
+                                <ul>
+                                    <li class="h5 pt-1">Sistemas de Informação</li>
+                                    <li class="h5 pt-1">Jogos Digitais</li>
+                                    <li class="h5 pt-1">Ciências da Computação</li>
+                                </ul>
+                            </div>
+                            <div align="center" class="col-lg-1 mt-4">
+                                <a class="btn btn-primary" style="text-decoration: none" href="#">
+                                    <i style="font-size: 80px;color: #fff;" class="fas fa-heart primary"></i>
+                                    <p class="text-subpucpr mt-2 m-0">Demonstrar<br>Interesse</p>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
         </div>
+      </div>
 
         <!-- Content Row, Projects -->
         <div class="row" id="projectsDiv"></div>
