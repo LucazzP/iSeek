@@ -2,10 +2,12 @@ var nomeProjeto = document.getElementById('nome-projeto');
 var nomeAluno = document.getElementById('nome-aluno');
 var db = firebase.firestore();
 var projectRef = db.collection('projetos');
-var id = window.location.href.split('?')[1];
+var id = window.location.href.split('?')[1].split('#')[0].split(',')[0];
 
 var projectName = '';
 var participantName = '';
+
+console.log(id);
 
 function loadPage(id) {
     projectRef.doc(id).get().then(function(doc) {

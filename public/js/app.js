@@ -22,7 +22,7 @@ var navHTML = '<!-- Divider -->'+
                 '</div>'+
                 
                 '<!-- Nav Item - Novo projeto -->'+
-                '<li class="nav-item active" id="newProjectNav">'+
+                '<li class="nav-item" id="newProjectNav">'+
                 '</li>'+
     
                 '<!-- Nav Item - Meus projetos -->'+
@@ -40,19 +40,17 @@ var navHTML = '<!-- Divider -->'+
                 '</li>';
 
 function iniciar(){
-    $.
-
     firebase.auth().onAuthStateChanged(function(authData){
         var page = window.location.pathname.split('/');
         page = page[page.length - 1];
     
-        if(page == 'index.html' || page == 'register.html'){
-            if(authData != null && page == 'index.html'){
-                window.location.assign('plataform.html');
+        if(page == 'login.html' || page == 'register.html'){
+            if(authData != null && page == 'login.html'){
+                window.location.assign('index.html');
             }
         } else {
             if(authData == null){
-                window.location.assign('index.html');
+                window.location.assign('login.html');
             }
             checkIfIsProfessor(authData.uid);
             getUsernameAndSubstitute();
@@ -76,24 +74,58 @@ function getUsernameAndSubstitute(){
 }
 
 function checkIfIsProfessor(uid){
+    checkIfHaveProjects(uid);
     firebase.firestore().collection('users').doc(uid).get().then(function(data){
         if(data.data()['typeUser'] == 'souAluno'){
             isProfessor = false;
         } else {
             var newProjectNav = document.getElementById('newProjectNav');
-            newProjectNav.innerHTML = '<a class="nav-link" href="new-project.html"> <i class="fas fa-fw fa-chart-area"></i> <span>Novo projeto</span></a>';
+            newProjectNav.innerHTML = '<a class="nav-link" href="#"> <i class="fas fa-fw fa-chart-area"></i> <span>Novo projeto</span></a>';
             isProfessor = true;
         }
+    }).then(function(){
+        loadLinks();
     });
 }
 
 function checkIfHaveProjects(uid){
     firebase.firestore().collection('projetos').where('id-alunos', "array-contains", uid).get().then(function(data){
         var nav = document.getElementById('gerirProjectosNav');
-        if(!data.empty){
+        if(data.empty){
             nav.innerHTML = navHTML;
-            return true;
         }
+    });
+}
+
+function loadLinks(){
+    $.ajax("index.html").done(function(){
+        var link = window.location.href.split('?');
+        if(link.length >= 2) {
+            if(link.toString().split(',')[2] == 'project'){
+                $("#body").load("project.html");
+            } else if(link.toString().split(',')[2] == 'my-project'){
+                $("#body").load("my-project.html");
+            }
+        }
+        else{
+            $("#body").load("plataform.html");
+        }
+        $("#navProjetos").click(function(){
+            $("#body").load("plataform.html");
+            window.history.pushState('teste', 'teste', 'index.html');
+        });
+        $("#newProjectNav").click(function(){
+            $("#body").load("new-project.html");
+            window.history.pushState('teste', 'teste', 'index.html');
+        });
+        $("#navMyProjects").click(function(){
+            $("#body").load("my-projects.html");
+            window.history.pushState('teste', 'teste', 'index.html');
+        });
+        $("#navChat").click(function(){
+            $("#body").load("chat.html");
+            window.history.pushState('teste', 'teste', 'index.html');
+        });
     });
 }
 

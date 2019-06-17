@@ -30,7 +30,7 @@ var cardProject =
 
         '<hr>' +
 
-        '<a class="btn btn-primary btn-icon-split container-fluid">' +
+        '<a class="btn btn-primary btn-icon-split container-fluid" href="#">' +
           '<span class="icon">' +
             '<i class="fas fa-arrow-right"></i>' +
           '</span>' +
@@ -63,7 +63,8 @@ function createCardProject(id, description, name, professor) {
   professorElement.innerHTML = div.getAttribute('professor');
   
   // var verMais = document.getElementById('verMais');
-  verMaisElement.setAttribute('href', 'my-project.html?' + id);
+  verMaisElement.setAttribute('href', 'index.html?' + id + ',my-project');
+  verMaisElement.setAttribute('onclick', '$("#body").load("my-project.html);');
 
   projectsDiv.innerHTML += div.innerHTML;
 }
