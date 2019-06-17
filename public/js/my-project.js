@@ -126,9 +126,6 @@ const blocItemKanban = '<div class="card draggable shadow-sm" id="cd1" draggable
 
 const dropZone = '<div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>';
 
-btnSaveTask.addEventListener('click', function(){
-    
-});
 function addCard(field) {
     switch (field) {
         case 0:
