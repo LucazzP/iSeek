@@ -69,10 +69,21 @@ function createCardProject(id, description, name, professor) {
   projectsDiv.innerHTML += div.innerHTML;
 }
 
-projectRef.get().then(function(docs){
-   docs.forEach(function(doc) {
-     var data = doc.data();
-      // projectRef.add(doc.data())
-      createCardProject(doc.id, data['description'], data['nome-projeto'], data['nome-professor']);
-    });
+firebase.auth().onAuthStateChanged(function(authData){
+  if(authData != null){
+    projectRef.where('id-alunos', 'array-contains', authData.uid).get().then(function(docs){
+      docs.forEach(function(doc) {
+        var data = doc.data();
+         // projectRef.add(doc.data())
+         createCardProject(doc.id, data['description'], data['nome-projeto'], data['nome-professor']);
+       });
+   });
+   projectRef.where('id-professor', '==', authData.uid).get().then(function(docs){
+    docs.forEach(function(doc) {
+      var data = doc.data();
+       // projectRef.add(doc.data())
+       createCardProject(doc.id, data['description'], data['nome-projeto'], data['nome-professor']);
+     });
+ });
+  }
 });
