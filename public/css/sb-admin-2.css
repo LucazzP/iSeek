@@ -12393,6 +12393,12 @@ body.sidebar-toggled footer.sticky-footer {
     font-size: 2.5rem;
 }
 
+.beauty {
+    color: #912437;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
 @media(max-width:768px) {
     #wrapper.toggled #sidebar-wrapper .sidebar {
         width: 100%;
