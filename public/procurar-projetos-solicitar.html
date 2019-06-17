@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>iSeek - Meu projeto</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700,700i|Poppins:400,400i,600,700,700i,800&display=swap" rel="stylesheet">
+    <!-- font-family: 'Poppins', sans-serif; | font-family: 'Montserrat', sans-serif; -->
+    <link rel="stylesheet" href="https://use.typekit.net/sep5vnw.css">
+    <!-- font-family: 'myriad-pro', sans-serif; -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+
+    <!-- Begin Page Content -->
+    <div align="center" class="container-fluid">
+
+        <div style="width: 500px;" class="modal-content">
+            <div class="modal-header">
+                <h4 class="h4">Insira suas informações</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="p-3">
+                                <form class="user">
+                                    <div class="form-group row m-0">
+                                        <div class="col-sm-12">
+                                            <p>Idade:</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-12 mb-3 mb-sm-0">
+                                            <input type="number" class="form-control form-control-user" id="idade" placeholder="Idade">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row m-0">
+                                        <div class="col-sm-12">
+                                            <p>Disponibilidade:</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-5 mb-3 mb-sm-0">
+                                            <input type="time" class="form-control form-control-user" id="hora1" placeholder="">
+                                        </div>
+                                        <div class="col-sm-2 m-0 mb-sm-0">
+                                            <p class="pt-3">até</p>
+                                        </div>
+                                        <div class="col-sm-5 mb-3 mb-sm-0">
+                                            <input type="time" class="form-control form-control-user" id="hora2" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div align="center" style="position: right" class="form-group col-sm-12 mb-3 mb-sm-0">
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="pr-2">
+                                                            <label class="checkbox-inline m-1">
+                                                                <input type="checkbox" name="typeUser" id="souAluno" value="souAluno" checked=""> Segunda 
+                                                            </label>
+                                                        </td>
+                                                        <td class="pr-2">
+                                                            <label class="checkbox-inline m-1">
+                                                                <input type="checkbox" name="typeUser" id="souAluno" value="souAluno" checked=""> Terça  
+                                                            </label>
+                                                        </td>
+                                                        <td class="pr-2">
+                                                            <label class="checkbox-inline m-1">
+                                                                <input type="checkbox" name="typeUser" id="souAluno" value="souAluno" checked=""> Quarta 
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pr-2">
+                                                            <label class="checkbox-inline m-1">
+                                                                <input type="checkbox" name="typeUser" id="souAluno" value="souAluno" checked=""> Quinta 
+                                                            </label>
+                                                        </td>
+                                                        <td class="pr-2">
+                                                            <label class="checkbox-inline m-1">
+                                                                <input type="checkbox" name="typeUser" id="souAluno" value="souAluno" checked=""> Sexta  
+                                                            </label>
+                                                        </td>
+                                                        <td class="pr-2">
+                                                            <label class="checkbox-inline m-1">
+                                                                <input type="checkbox" name="typeUser" id="souAluno" value="souAluno" checked=""> Sábado 
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <div class="col-sm-12 mb-3 mb-sm-0">
+                                            <p>Fale um pouco sobre você,<br>e porque deseja ingressar no projeto</p>
+                                        </div>
+                                        <div class="col-sm-12 mb-3 mb-sm-0">
+                                            <textarea style="min-height: 150px;" rows="3" type="text" class="form-control" id="hora1" placeholder=""></textarea>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <a style="font-size: 1em" href="#" class="btn btn-primary btn-user btn-block" id="registerBtn">
+                                        Salvar
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <script src="js/my-project.js"></script>
+
+</body>
+
+</html>
