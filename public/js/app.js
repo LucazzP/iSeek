@@ -110,6 +110,10 @@ function loadLinks(){
         else{
             $("#body").load("plataform.html");
         }
+        $("#navIndex").click(function(){
+            $("#body").load("plataform.html");
+            window.history.pushState('teste', 'teste', 'index.html');
+        });
         $("#navProjetos").click(function(){
             $("#body").load("plataform.html");
             window.history.pushState('teste', 'teste', 'index.html');
