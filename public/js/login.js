@@ -9,7 +9,7 @@ btnlog.addEventListener('click', function() {
     firebase.auth().signInWithEmailAndPassword(email.value, password.value).then(function(result){
         //alert("Usuario Conectado!")
         console.log("Sucess")
-        window.location.replace("plataform.html");
+        window.location.replace("index.html");
         
     }).catch(function(error) {
         // Handle Errors here.

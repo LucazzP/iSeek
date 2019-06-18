@@ -33,7 +33,7 @@ btnRegi.addEventListener('click', function() {
                             })
                             .then(function(){
                                 console.log("Arquivo gravado com sucesso!");
-                                window.location.replace('plataform.html');
+                                window.location.replace('index.html');
                             });
                             
                         }).catch(function(error) {

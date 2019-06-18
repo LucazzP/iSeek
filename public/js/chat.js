@@ -14,7 +14,7 @@ function getUserName() {
 // Saves a new message on the Firebase DB.
 async function saveMessage(message ,recieverUid) {
     var uid = firebase.auth().currentUser.uid;
-    var docRef = firebase.firestore().collection('chat').doc(uid).collection('messages');
+    var docRef = firebase.firestore().collection('chat');
 
     return await docRef.add({
         name: 'userName',
@@ -28,10 +28,9 @@ async function saveMessage(message ,recieverUid) {
 }
 
 // Loads chat messages history and listens for upcoming ones.
-function loadMessages() {
-    var uid = firebase.auth().currentUser.uid;
+function loadMessages(uid) {
   // Create the query to load the last 12 messages and listen for new ones.
-  var docRef = firebase.firestore().collection('chat').doc(uid).collection('messages').orderBy('timestamp', 'desc').limit(12);
+  var docRef = firebase.firestore().collection("chat").where("sender", "==", uid).orderBy('timestamp', 'desc').limit(12);
   
   // Start listening to the query.
   docRef.onSnapshot(function(snapshot) {
@@ -42,6 +41,30 @@ function loadMessages() {
         var message = change.doc.data();
         displayMessage(change.doc.id, message.timestamp, message.reciever, message.text);
       }
+    });
+  });
+
+  docRef = firebase.firestore().collection("chat").where("reciever", "==", uid).orderBy('timestamp', 'desc').limit(12);
+  
+  // Start listening to the query.
+  docRef.onSnapshot(function(snapshot) {
+    snapshot.docChanges().forEach(function(change) {
+      if (change.type === 'removed') {
+        deleteMessage(change.doc.id);
+      } else {
+        var message = change.doc.data();
+        displayMessage(change.doc.id, message.timestamp, message.reciever, message.text);
+      }
+    });
+  });
+
+  docRef = firebase.firestore().collection("projetos").where("id-alunos", "array-contains", uid);
+  
+  // Start listening to the query.
+  docRef.onSnapshot(function(snapshot) {
+    snapshot.docChanges().forEach(function(data) {
+      console.log(data.doc.data());
+      displayMessageChatRecent(data.doc.data()['nome-professor']);
     });
   });
 }
@@ -113,6 +136,17 @@ var MESSAGE_TEMPLATE_OUTGOING =
       '<span class="time_date"></span> </div>' +
     '</div>';
 
+var selectChatHTML = 
+    '<div class="chat_list">'+
+      '<div class="chat_people">'+
+      '<div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>'+
+      '<div class="chat_ib">'+
+        '<h5><span class="user"></span><span class="chat_date">Dec 25</span></h5>'+
+        '<p id="lastmessage"></p>'+
+      '</div>'+
+      '</div>'+
+    '</div>';
+
 // Adds a size to Google Profile pics URLs.
 function addSizeToGoogleProfilePic(url) {
   if (url.indexOf('googleusercontent.com') !== -1 && url.indexOf('?') === -1) {
@@ -131,6 +165,23 @@ function deleteMessage(id) {
   if (div) {
     div.parentNode.removeChild(div);
   }
+}
+
+// Displays a Message in the UI.
+function displayMessageChatRecent(nome) {
+  var div = document.getElementById('chats');
+  // If an element for that message does not exists yet we create it.
+  if (!div) {
+    var container = document.createElement('div');
+    container.innerHTML = selectChatHTML;
+    div = container.firstChild;
+  }
+  var nameElement = div.querySelector('.user');
+  nameElement.textContent = nome;
+  // Show the card fading-in and scroll to view the new message.
+  setTimeout(function() {div.classList.add('visible')}, 1);
+  messageListElement.scrollTop = messageListElement.scrollHeight;
+  messageInputElement.focus();
 }
 
 // Displays a Message in the UI.
@@ -194,25 +245,20 @@ function verifyButtonAndSend(event){
   }
 }
 
-function resolverDepoisDe1Segundos() {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        loadMessages();
-      }, 1000);
-    });
-}
+firebase.auth().onAuthStateChanged(function(authData){
+  loadMessages(authData.uid);
+});
 
 // Checks that Firebase has been imported.
 checkSetup();
-
-resolverDepoisDe1Segundos();
 
 // Shortcuts to DOM Elements.
 var messageListElement = document.getElementById('messages');
 var messageInputElement = document.getElementById('inputMsgChat');
 var submitButtonElement = document.getElementById('buttomSendMessage');
+var chats = document.getElementById('chats');
 
-var selectedReciever = 'caaduugdhoryhkwe9fkd'
+var selectedReciever = 'caaduugdhoryhkwe9fkd';
 
 // Saves message on form submit.
 submitButtonElement.addEventListener('click', onMessageFormSubmit);

@@ -35,7 +35,7 @@
             <h1 class="h2 mb-0 text-pucpr" id='nome-projeto'></h1>
             <p></p>
             <div class="d-sm-flex align-items-center pr-3 pt-3">
-                    <a id="myBtn" href="#" class="btn btn-primary btn-icon-split">
+                    <a id="myBtn" href="#" class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#exampleModalCenter">
                         <span class="icon text-white-50">
                       <i class="fas fa-user-plus"></i>
                     </span>
@@ -52,50 +52,53 @@
         <hr align="left" noshade width="95%" style="border-color: #912437">
 
         <!-- Modal -->
-        <div style="display:none;" class="modal-content">
-            <div class="modal-header">
-                <h4 class="h4">Convidar Participantes</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div align="right">
-                    <a href="#" class="btn btn-primary btn-icon-split mb-3">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-filter"></i>
-                        </span>
-                        <span class="text">Filtrar</span>
-                    </a>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="h4">Convidar Participantes</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
                 </div>
-                <div class="card shadow mb-4">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <i style="font-size: 200px;" class="fas fa-user-circle pl-5"></i>
-                            </div>
-                            <div style="border-right: 1px #080808 solid" class="col-lg-3">
-                                <p style="color: #000" class="h4 pt-2" id="nome">#nomeDaPessoa</p>
-                                <p style="color: #000" class="h5 pt-2" id="idade">#idade</p>
-                                <p style="color: #000" class="h5 pt-2" id="curso">#curso</p>
-                                <p style="color: #000" class="h5 pt-2" id="disponibilidade">#disponibilidade</p>
-                            </div>
-                            <div class="pl-4 col-lg-6">
-                                <p style="color: #000" class="h4 pt-2">Mensagem:</p>
-                                <p style="color: #000" class="h5 pt-2 align-justify" id="mensagem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt sint ipsum perferendis suscipit distinctio eius ut? Inventore similique illo atque, nesciunt maxime numquam totam excepturi at repellendus voluptate qui?</p>
-                            </div>
-                            <div align="center" class="col-lg-1 mt-4">
-                                <a class="btn btn-primary" style="text-decoration: none" href="#">
-                                    <i style="font-size: 80px;color: #fff;" class="fas fa-paper-plane primary"></i>
-                                    <span class="text-subpucpr">Convidar</span>
-                                </a>
+                <div class="modal-body">
+                    <div align="right">
+                        <a href="#" class="btn btn-primary btn-icon-split mb-3">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-filter"></i>
+                            </span>
+                            <span class="text">Filtrar</span>
+                        </a>
+                    </div>
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <i style="font-size: 200px;" class="fas fa-user-circle pl-5"></i>
+                                </div>
+                                <div style="border-right: 1px #080808 solid" class="col-lg-3">
+                                    <p style="color: #000" class="h4 pt-2" id="nome">#nomeDaPessoa</p>
+                                    <p style="color: #000" class="h5 pt-2" id="idade">#idade</p>
+                                    <p style="color: #000" class="h5 pt-2" id="curso">#curso</p>
+                                    <p style="color: #000" class="h5 pt-2" id="disponibilidade">#disponibilidade</p>
+                                </div>
+                                <div class="pl-4 col-lg-6">
+                                    <p style="color: #000" class="h4 pt-2">Mensagem:</p>
+                                    <p style="color: #000" class="h5 pt-2 align-justify" id="mensagem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt sint ipsum perferendis suscipit distinctio eius ut? Inventore similique illo atque, nesciunt maxime numquam totam excepturi at repellendus voluptate qui?</p>
+                                </div>
+                                <div align="center" class="col-lg-1 mt-4">
+                                    <a class="btn btn-primary" style="text-decoration: none" href="#">
+                                        <i style="font-size: 80px;color: #fff;" class="fas fa-paper-plane primary"></i>
+                                        <span class="text-subpucpr">Convidar</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Modal -->
+        </div>
 
         <!-- Participantes -->
         <div class="d-sm-flex align-items-center justify-content-between mt-2 mb-2 mt-2">

@@ -50,6 +50,9 @@ registerBtn.addEventListener('click', function(){
                                 "nome-projeto": nomeProjeto.value,
                                 "tipo": dropProjetosButton.innerText,
                                 "vagas": vagas.value,
+                            }).then(function(doc){
+                                window.history.pushState('teste', 'teste', 'index.html?' + doc.id + ',my-project');
+                                $("#body").load("my-project.html");
                             });
                         } else alert("Selecione os cursos requisitatos para a vaga!");
                     } else alert("Selecione se seu projeto possui bolsa!");
