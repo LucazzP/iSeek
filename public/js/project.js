@@ -46,7 +46,7 @@ function loadPage(id) {
 
 function verifyIfWasInProject(uid){
     firebase.firestore().collection('invites').where('idAluno', '==', uid).get().then(function(docs){
-        if(!docs.empty){
+        if(!docs.empty ){
             btnEntrarProjeto.removeAttribute('href');
             btnEntrarProjeto.innerHTML = btnEntrarProjetoHTMLDisabled;
             isInProject = true;

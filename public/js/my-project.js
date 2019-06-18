@@ -1,10 +1,10 @@
 var nomeProjeto = document.getElementById('nome-projeto');
-var nomeAluno = document.getElementById('nome-aluno');
+var nomeAluno = document.getElementById('participante1');
 var db = firebase.firestore();
 var projectRef = db.collection('projetos');
 var id = window.location.href.split('?')[1].split('#')[0].split(',')[0];
 var projectName = '';
-var participantName = '';
+var participantName = 'Não há participantes';
 var btnCreateCard = document.getElementById('btn-createCard');
 var btnSaveTask = document.getElementById('btn_save');
 var divAfazer = document.getElementById('divAfazer');
@@ -22,7 +22,12 @@ function loadPage(id) {
             participantName = doc.data()['nome-alunos'][0];
         } else participantName = 'Não há alunos!';
 
+        if(participantName == undefined){
+            participantName = 'Não há participantes';
+        }
+
     }).then(function() {
+        nomeAluno.innerText = participantName;
         nomeProjeto.innerHTML = projectName;
     });
 }
