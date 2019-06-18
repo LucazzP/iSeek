@@ -19,15 +19,19 @@ function loadPage(id) {
         projectName = data['nome-projeto'];
 
         if (doc.data()['id-alunos'] != []) {
-            participantName = doc.data()['nome-alunos'][0];
-        } else participantName = 'Não há alunos!';
-
-        if(participantName == undefined){
-            participantName = 'Não há participantes';
+            try{
+                firebase.firestore().collection('users').doc(doc.data()['id-alunos'][0]).get().then(function(doc){
+                    participantName = doc.data()['nome'] + ' ' + doc.data()['sobrenome'];
+                    nomeAluno.innerText = participantName;
+                });
+            } catch (e){
+                nomeAluno.innerText = participantName;
+            }
+        } else {
+            nomeAluno.innerText = participantName;
         }
 
     }).then(function() {
-        nomeAluno.innerText = participantName;
         nomeProjeto.innerHTML = projectName;
     });
 }
